@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "pretty-cucumber"
+version = "0.1.0"
+description = "A simple script to convert a Cucumber .feature file into a pretty HTML"
+authors = ["Ant <anthony.hillairet@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+behave = "^1.2.6"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+black = "^24.2.0"
+mypy = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# ======== isort =======
+# https://pycqa.github.io/isort/docs/configuration/config_files.html#pyprojecttoml-preferred-format
+[tool.isort]
+line_length = 99
+profile = "black"
+
+# ======== mypy ========
+# https://mypy.readthedocs.io/en/stable/config_file.html#using-a-pyproject-toml-file
+[tool.mypy]
+ignore_missing_imports = true
+show_error_codes = true
+check_untyped_defs = true
